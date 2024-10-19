@@ -14,7 +14,7 @@ public class HelloWorld {
     */
 
     public static void main(String[] args) {
-        // main method is like the engine of a car. Everything inside must be "static" to be used here.
+        // the main method is like the engine of a car. Everything inside must be "static" to be used here.
 
         // Single-line comments start with "//" and are ignored by the Java compiler.
 
@@ -37,5 +37,5 @@ public class HelloWorld {
          */
     }
 
-    // Comments can be added outside of the main method as well.
+    // Comments can be added outside the main method as well.
 }
