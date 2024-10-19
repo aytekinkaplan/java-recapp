@@ -1,4 +1,4 @@
-package ch01_Variables;
+package j01_Variables;
 
 public class CH01_Variables {
 
@@ -29,7 +29,7 @@ public class CH01_Variables {
         System.out.println("Is Student: " + isStudent);
 
         /*
-            Example: Another task - Declare variables for name, age, and salary.
+            Example: Another task - Declare variable for name, age, and salary.
             Print the details to the console.
         */
 
@@ -85,5 +85,21 @@ public class CH01_Variables {
             Variables are created in the scope they are declared in.
             When that scope ends (e.g., the method or block), the variables "die" or are no longer accessible.
         */
+        // Example 1: Declaring multiple variables and printing them
+        int day = 15, month = 8, year = 2024;
+        System.out.println("Date: " + day + "/" + month + "/" + year);
+
+// Example 2: Changing variable values (reassignment)
+        int score = 90;
+        System.out.println("Initial Score: " + score);
+        score = 95;
+        System.out.println("Updated Score: " + score);
+
+// Example 3: Working with booleans
+        boolean isGraduated = false;
+        System.out.println("Graduated: " + isGraduated);
+        isGraduated = true;
+        System.out.println("Graduated (updated): " + isGraduated);
+
     }
 }
