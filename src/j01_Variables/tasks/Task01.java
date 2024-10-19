@@ -6,12 +6,12 @@ public class Task01 {
         \n : Starts a new line.
         \t : Horizontal tab (adds indentation).
         \\ : Prints a backslash "\".
-        \' : Prints a single quote "'".
-        \" : Prints a double quote """.
+        \': Prints a single quote "'".
+        \": Prints a double quote """.
      */
 
     public static void main(String[] args) {
-    // Question-1: Print "Hello ", "World  \ /" on the console as shown.
+    // Question-1: Print "Hello ", "World \ /" on the console as shown.
 
     System.out.println("   \"Hello \", \"World \\ /\"    ");
 
