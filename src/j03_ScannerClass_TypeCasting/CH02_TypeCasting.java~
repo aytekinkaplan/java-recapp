@@ -41,7 +41,7 @@ public class CH02_TypeCasting {
         // Explanation: Byte ranges from -128 to 127. Since 150 is out of range, it wraps around to -106.
 
         /*
-         TASK 1: Convert a character to its ASCII value,
+         TASK 1: Convert a character to its ASCII value
          Ask the user for a character and print the ASCII value of that character.
          Example:
          Input: 'a'
