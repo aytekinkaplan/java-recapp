@@ -1,6 +1,6 @@
 package ch02_DataTypes_WrapperClass;
 
-public class C05_RegexExpressions {
+public class CH05_RegexExpressions {
 
     public static void main(String[] args) {
 

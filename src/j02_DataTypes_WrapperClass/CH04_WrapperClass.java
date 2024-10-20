@@ -3,112 +3,73 @@ package ch02_DataTypes_WrapperClass;
 public class CH04_WrapperClass {
     public static void main(String[] args) {
 
-         /*
-            Note: Java primitive lere method'lar ekleyerek yeni bir
-                  yapi olusturdu, bu yapiya "Wrapper Class"
-                  Primitive         Wrapper
-                     byte     ==>    Byte
-                     short    ==>    Short
-                     ** int   ==>    Integer
-                     long     ==>    Long
-                     float    ==>    Float
-                     double   ==>    Double
-                     boolean  ==>    Boolean
-                     ** char  ==>    Character
+        /*
+            Java introduced "Wrapper Classes" to allow primitive data types to behave like objects
+            and to provide useful methods.
+
+            - A Wrapper Class is a way to wrap a primitive data type in an object.
+            - This gives primitive types additional functionality, such as converting between types or working with collections.
+
+            ** Primitive Types and Their Wrapper Classes:
+            Primitive       Wrapper Class
+            ---------       --------------
+            byte     ==>    Byte
+            short    ==>    Short
+            int      ==>    Integer
+            long     ==>    Long
+            float    ==>    Float
+            double   ==>    Double
+            boolean  ==>    Boolean
+            char     ==>    Character
          */
 
-        String name = "Zeynep Hanim";
-        int age = 33;
+        // Example 1: Converting primitive to Wrapper (Autoboxing)
+        int age = 33; 
+        Integer ageWrapper = Integer.valueOf(age);  // Autoboxing: primitive int to Integer object
 
+        System.out.println("Age in wrapper: " + ageWrapper); // Output: 33
 
-        System.out.println(name.toUpperCase());//ZEYNEP HANIM
+        // Example 2: Using methods from the Wrapper class (e.g., String to integer conversion)
+        String number = "12345";  // String value to be converted to Integer
 
-        Integer age2= 35;//Integer wrapper classindan age2 variable i olusturldu
+        int parsedNumber = Integer.parseInt(number);  // Converting String to primitive int
+        System.out.println("Parsed number: " + parsedNumber); // Output: 12345
 
-        // non-primitive data turleri data depolamak yaninda kullanışlı birçok method'a sahiptir
-        // ancak primitive data turlerinin boyle bir ozelligi yoktur
-        // primitive data turleri sadece degerleri saklarlar (container) ve hwerhangi bir özellik(method)
-        // vs bulundurmaz.
-        //Ancak primitive data turleri icin de bazi işlemler için (String'den tamsayı çekme) method'lar
-        // ihtiyaç
-        // olduğunda Java her bir primitive data turunu, non-primitive  Wrapper Class  oluşturarak
-        // ilgili methodlarla
-        // ara çözüm imkanı sunmuştur.
+        Integer wrappedNumber = Integer.valueOf(number);  // Converting String to Integer object
+        System.out.println("Wrapped number: " + wrappedNumber); // Output: 12345
 
-        String number = "12345" ;//bunu Integer a ceviriniz
-
-        //TASK id ve tc String değerlernin toplamını print eden code yazınız
+        // TASK: Add two string-based integers together
         String tc = "123456789";
         String id = "12345";
 
-        System.out.println(tc + id);//12345678912345
+        int tcNumber = Integer.parseInt(tc);  // Convert String to int
+        int idNumber = Integer.parseInt(id);  // Convert String to int
+        System.out.println("Sum of tc and id: " + (tcNumber + idNumber));  // Output: 123469134
 
-        System.out.println(Integer.valueOf(tc));//123456789
+        // TASK: Handling conversion errors
+        String invalidNumber = "12345AB";  // This string contains non-numeric characters
+        try {
+            int invalidParsed = Integer.parseInt(invalidNumber);  // This will throw a NumberFormatException
+        } catch (NumberFormatException e) {
+            System.out.println("Error: Cannot convert invalid number string: " + invalidNumber);
+        }
 
-        System.out.println(Integer.valueOf(id));//12345
+        // Example 3: Maximum and Minimum values of primitive types using Wrapper Classes
+        System.out.println("Max Byte Value: " + Byte.MAX_VALUE);  // Output: 127
+        System.out.println("Min Byte Value: " + Byte.MIN_VALUE);  // Output: -128
 
-        int yeniTc = Integer.valueOf(tc);
+        System.out.println("Max Integer Value: " + Integer.MAX_VALUE);  // Output: 2147483647
+        System.out.println("Min Integer Value: " + Integer.MIN_VALUE);  // Output: -2147483648
 
-        int yeniID = Integer.valueOf(id);
-
-        System.out.println(yeniID + yeniTc);//123469134
-//bu methoda gitmek icin ctrl+sol click yapiniz. gittiginiz class da method ile ilgili
-        //verilen bilgiyi okuyunuz buna kutuphane okuma diyiruz
-
-
-/*
-String tc = "123456789";
-        String id = "12345"
- */
-
-        int idYeni= Integer.parseInt(id);
-        //return type methodun islem sonunda size donderdigi deger dir
-
-        int tcYeni = Integer.parseInt(tc);
-
-        System.out.println(idYeni + tcYeni);//123469134
-
-        //  valueOf(); Integer donderirir return type olarak
-        // parseInt();  int donderir  return type olarak
-
-
-        String okulNo = "12345AB";
-
-       //***hatalo kod RunTimeError    int okulNoYeni= Integer.valueOf(okulNo);
-        //Exception in thread "main" java.lang.NumberFormatException
-        //interview question hatalari nasil ayiklarsiniz?
-
-
-        // TASK-> byte short int maximum ve minimum değerlerini print eden code yazınız wrapper class lari kullanrak
-        byte maxDegerByte= Byte.MAX_VALUE;
-        byte minDegerByte = Byte.MIN_VALUE;
-
-        System.out.println("maxDegerByte = " + maxDegerByte);//maxDegerByte = 127
-        System.out.println("minDegerByte = " + minDegerByte);//minDegerByte = -128
-
-
-        //Autoboxing
+        // Example 4: Autoboxing and Unboxing
+        // Autoboxing: Java automatically converts a primitive to its Wrapper class
         boolean bPrimitive = true;
-        Boolean  bWrapper = bPrimitive;
+        Boolean bWrapper = bPrimitive;  // Autoboxing
 
-        //boxing
-        Integer numberWrapper = 55 ;
+        // Unboxing: Java automatically converts a Wrapper class back to its primitive type
+        Integer numberWrapper = 55;  // Wrapper class (Integer)
+        int numberPrimitive = numberWrapper;  // Unboxing: Integer to int
 
-        //Unboxing in java
-        int numberPrimitive= numberWrapper;
-
-
-        //java5 onceisnde hata verirdi java 5 ile guncellendi
-
-
-
-
-
-
-
-
-
-
-
+        System.out.println("Wrapper class to primitive: " + numberPrimitive);  // Output: 55
     }
 }
