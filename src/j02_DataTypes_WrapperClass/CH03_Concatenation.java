@@ -1,6 +1,6 @@
 package ch02_DataTypes_WrapperClass;
 
-public class C03_Concatenation {
+public class CH03_Concatenation {
     public static void main(String[] args) {
 
         /*
