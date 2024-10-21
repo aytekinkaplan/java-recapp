@@ -5,38 +5,47 @@ public class C04_MathMethods {
     public static void main(String[] args) {
 
         /*
-     Math.abs(a)
-     Girilen degerin mutlak degerini verir.
+         * Math.abs(a) 
+         *   - Returns the absolute value of the input.
+         *
+         * Math.max(a, b) 
+         *   - Returns the larger of the two inputs.
+         *
+         * Math.min(a, b) 
+         *   - Returns the smaller of the two inputs.
+         *
+         * Math.round(a) 
+         *   - Rounds the input value to the nearest integer.
+         *
+         * Math.sqrt(a) 
+         *   - Returns the square root of the input.
+         *
+         * Math.pow(a, b) 
+         *   - Returns a raised to the power of b.
+         *
+         * Math.ceil(a) 
+         *   - Rounds up the input value to the nearest integer.
+         *
+         * Math.floor(a) 
+         *   - Rounds down the input value to the nearest integer.
+         */
 
-    Math.max(a, b)
-    Girilen iki degerden buyuk olani verir.
+        int a = 9;
 
-    Math.min(a, b)
-    Girilen iki degerden kucuk olani verir.
+        // Calculate and print a raised to the power of 2 (a^2)
+        System.out.println("Math.pow(a, 2) = " + Math.pow(a, 2));  // Output: 81.0
 
-    Math.round(a)
-    Girilen degerin en yakin tamsayiya yuvarlar.
+        // Calculate and print the square root of a
+        System.out.println("Math.sqrt(a) = " + Math.sqrt(a));  // Output: 3.0
 
-    Math.sqrt(a)
-    Girilen degerin karekokunu verir.
+        // Additional Examples
+        System.out.println("Math.abs(-5) = " + Math.abs(-5));  // Absolute value of -5 => 5
+        System.out.println("Math.max(3, 7) = " + Math.max(3, 7));  // Maximum of 3 and 7 => 7
+        System.out.println("Math.min(3, 7) = " + Math.min(3, 7));  // Minimum of 3 and 7 => 3
+        System.out.println("Math.round(3.6) = " + Math.round(3.6));  // Rounds 3.6 to the nearest integer => 4
+        System.out.println("Math.ceil(3.1) = " + Math.ceil(3.1));  // Ceil of 3.1 => 4
+        System.out.println("Math.floor(3.7) = " + Math.floor(3.7));  // Floor of 3.7 => 3
 
-    Math.pow(a, b)
-    Girilen a ve b degerini a uzeri b olarak verir.
-
-    Math.ceil(a) 3.1 => 4
-    Girilen bir ondalikli sayiyi bir sonraki en yakin tam sayiya yukseltir.
-
-    Math.floor(a) 3.7 => 3
-    Girilen bir ondalikli sayiyi bir onceki en yakin tam sayiya indirger.
-     */
-
-        int a = 9 ;
-        System.out.println("Math.pow(a,2) = " + Math.pow(a, 2));//Math.pow(a,2) = 81.0
-
-        System.out.println("Math.sqrt(a) = " + Math.sqrt(a));//Math.sqrt(a) = 3.0
-
-        //bir method veya bir variable a ulasmak istersek ya O methodun bulundugu class in isminden gidicez
-        //yada methodun bulundugu class dan obje create edip o objeden gidicez
-
+        // Explanation: You can access a method from the `Math` class either directly (as it's a static class) or by creating an instance (but that's unnecessary since all methods are static).
     }
 }
