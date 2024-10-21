@@ -1,37 +1,46 @@
-package ch04_JavaOperators.jo01_ArithmeticOperators;
+package j04_JavaOperators.ch01_ArithmeticOperators;
 
 import java.util.Scanner;
 
 public class C03_RakamlarToplamiTask {
     public static void main(String[] args) {
 
-        // kullanıcıdan alınan 3 basamaklı bir sayını rakamları toplamını print eden code create ediniz
-        //input 111
-        // output 3
+        // Task: Create a code that prints the sum of the digits of a 3-digit number
+        // Example:
+        // Input: 111
+        // Output: 3
 
-        //1.adim Scanner obj create edilir
-        //2.adim sout komut ile veri istenir
-        //3.adim  int degere atama yapilir input objesinden nextInt() methodu ile
-        //4.adim  % ve  10 a bolme uyguylanir
+        // Step 1: Create a Scanner object to capture user input
+        Scanner input = new Scanner(System.in);
 
-            Scanner input = new Scanner(System.in);
-        System.out.println("3 basamakli sayi gir");
+        // Step 2: Ask the user for a 3-digit number
+        System.out.println("Please enter a 3-digit number: ");
 
-        int sayi = input.nextInt();//user in girdigi deger atandi
+        // Step 3: Capture the user's input as an integer
+        int sayi = input.nextInt();  // Assign the user input to the variable `sayi`
 
-        int birlerBasamagi = sayi % 10 ;//sayinin 10 a bolumunden kalan birler basamagi atandi
+        // Check if the number is actually a 3-digit number
+        if (sayi >= 100 && sayi <= 999) {
 
-        sayi /= 10; //sayinin birler basamagi atildi
+            // Step 4: Extract each digit
+            int birlerBasamagi = sayi % 10;  // Extract the unit place (one's place)
+            sayi /= 10;  // Remove the last digit (now the number is two digits)
 
-        int onlarBasamagi = sayi % 10 ; //iki basamaga dusen sayinin birler basamagi alindi. (ilk sayinin onlar basamagi)
+            int onlarBasamagi = sayi % 10;  // Extract the ten places
+            int yuzlerBasamagi = sayi / 10;  // The remaining number is the hundred places
 
-        int yuzlerBasamagi = sayi / 10 ; //sayinin yuzler basamagi alinmis oldu
+            // Step 5: Calculate the sum of the digits
+            int toplam = birlerBasamagi + onlarBasamagi + yuzlerBasamagi;
 
+            // Step 6: Print the result
+            System.out.println("The sum of the digits is: " + toplam);  // Example output: 3
 
-        int toplam = birlerBasamagi + onlarBasamagi +yuzlerBasamagi;
+        } else {
+            // Handle cases where the user doesn't enter a 3-digit number
+            System.out.println("Please enter a valid 3-digit number.");
+        }
 
-        System.out.println("toplam = " + toplam);//toplam = 6
-
-
+        // Close the scanner
+        input.close();
     }
 }
