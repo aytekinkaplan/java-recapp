@@ -1,4 +1,4 @@
-package ch04_JavaOperators.tasks04;
+package j04_JavaOperators.tasks;
 
 public class _19_ComparisonOperators_equals {
 

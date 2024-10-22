@@ -1,18 +1,22 @@
-package ch04_JavaOperators.tasks04;
+package j04_JavaOperators.tasks;
 
 public class _11_ArithmeticOperator_reminder1 {
 
     public static void main(String[] args) {
 
-        /*  Verilen int ler hakkında (num1, num2),
-            num1 'in   num2'ye bölümünden kalanı, int sonuc'a  eşitleyin.
-            int sonucu yazdırın.  */
+        /* Task:
+           Given two integers (num1, num2),
+           Assign the remainder of num1 divided by num2 to the variable 'result' and print the result.
+        */
 
+        // Declare and initialize the integers
+        int num1 = 10;
+        int num2 = 3;
 
+        // Calculate the remainder
+        int result = num1 % num2;
 
-        //Kodu aşağıya yazınız.
-
-
-
+        // Print the result with a message
+        System.out.println("The remainder when " + num1 + " is divided by " + num2 + " is: " + result);
     }
 }

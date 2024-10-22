@@ -1,16 +1,25 @@
-package ch04_JavaOperators.tasks04;
+package j04_JavaOperators.tasks;
 
 public class _14_ComparisonOperators_bigger {
 
     public static void main(String[] args) {
 
-     /*   Bir integer oluşturun ve değeri 13 olsun.
-                Başka bir integer daha oluşturun ve değeri 10 olsun.
-                Print kodunun içine Ilk int ,ikinci int'ten büyüktür yazın. (>,< simgeleri ile)
-                Console' da 'true' yazısını görmelisiniz.        */
+        /* Task:
+           Create two integers, one with the value 13 and another with the value 10.
+           Print whether the first integer is greater than the second.
+           You should see 'true' in the console.
+        */
 
-        //Kodu aşağıya yazınız.
-
+        // Declare and initialize integers
         int a = 13;
+        int b = 10;
+
+        // Perform comparisons
+        boolean isAGreater = a > b;
+        boolean isALess = a < b;
+
+        // Print the results with descriptive messages
+        System.out.println("Is " + a + " greater than " + b + "? " + isAGreater); // true
+        System.out.println("Is " + a + " less than " + b + "? " + isALess); // false
     }
 }

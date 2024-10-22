@@ -1,17 +1,22 @@
-package ch04_JavaOperators.tasks04;
+package j04_JavaOperators.tasks;
 
 public class _06_ArithmeticOperator_division1 {
 
     public static void main(String[] args) {
 
-        /* Verilen iki int hakkında (num1,  num2),
-        İlk int'i ikinci int'e bölün.
-        Sonucu yazdırın. */
+        /* Task:
+           Given two integers (num1, num2),
+           Divide the first integer by the second and print the result.
+        */
 
+        // Declare and initialize the integers
+        int num1 = 10;
+        int num2 = 5;
 
+        // Perform division
+        int div = num1 / num2;
 
-
-        //Kodu aşağıya yazınız.
-
+        // Print the result with a message
+        System.out.println("The result of dividing " + num1 + " by " + num2 + " is: " + div);
     }
 }
