@@ -1,18 +1,21 @@
-package ch04_JavaOperators.tasks04;
+package j04_JavaOperators.tasks;
 
 public class _05_ArithmeticOperator_sum3 {
 
     public static void main(String[] args) {
 
-        /* Verilen 3 tane int (num1,num2,num3),
-           Bu üç int'in toplamı yazdırın.   */
+        /* Task:
+           Given three integers (num1, num2, num3),
+           Print the sum of these three integers.
+        */
 
+        // Declare and initialize the integers
+        int num1 = 10, num2 = 20, num3 = 30;
 
+        // Calculate the sum
+        int sum = num1 + num2 + num3;
 
-
-        //Kodu aşağıya yazınız.
-
-
-
+        // Print the result with a message
+        System.out.println("The sum of " + num1 + ", " + num2 + ", and " + num3 + " is: " + sum);
     }
 }
