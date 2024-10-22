@@ -1,25 +1,29 @@
-package ch04_JavaOperators.tasks04;
+package j04_JavaOperators.tasks;
 
 public class _04_ArithmeticOperator_subtract2 {
 
     public static void main(String[] args) {
 
         /*
-        Verilen 4 tane int (num 1, num2 , num3 , num4),
-        Int'leri birbirinden çıkarın.
-        Sonucu yazdırın.
-        Örneğin;
+        Task:
+        Given four integers (num1, num2, num3, num4),
+        Subtract the integers in sequence and print the result.
+        
+        Example:
         num1 = 90
         num2 = 40
         num3 = 10
         num4 = 10
-        Sonuc 30 olmalı.
+        Result should be 30.
          */
 
+        // Declare and initialize the integers
+        int num1 = 90, num2 = 40, num3 = 10, num4 = 10;
 
+        // Perform subtraction
+        int sub = num1 - num2 - num3 - num4;
 
-        //Kodu aşağıya yazınız.
-
-
+        // Print the result with a message
+        System.out.println("The result of subtracting " + num2 + ", " + num3 + ", and " + num4 + " from " + num1 + " is: " + sub);
     }
 }
