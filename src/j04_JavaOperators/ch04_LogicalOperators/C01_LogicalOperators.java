@@ -1,62 +1,65 @@
-package ch04_JavaOperators.jo04_LogicalOperators;
+package j04_JavaOperators.ch04_LogicalOperators;
 
 public class C01_LogicalOperators {
     public static void main(String[] args) {
-         /*
- -------- && - and - (ve)---------
+        /*
+         Logical operators explained with examples:
+         && (AND), || (OR), and ! (NOT) operators with short-circuiting behavior.
+        */
 
-      True   &&    True    -->  True
-      True   &&    False   -->  False
-      False  &&    True    -->  False
-      False  &&    False   -->  False
-
-
-     -------- ||- or - (veya)---------
-
-      True   ||    True    -->  True
-      True   ||    False   -->  True
-      False  ||    True    -->  True
-      False  ||    False   -->  False
- */
-
-        // && ile & arasindaki fark
-        //&& de boolean sonuc 3 te bir tane false bulunca durur tum satırı
-        // kontrol etmeye calısmaz.
-
-        // Ancak & tum satırı kontrol eder ondan sonra durur.
-        //sonucta fark yok sadece biri ilk hatayı buldugunda durur dığeri
-        // sonuna kadar gider.&& tekliye gore daha hizli calisir
-
-        //and->ve
-
+        // Declare boolean values
         boolean b1 = true;
         boolean b2 = false;
+
+        // Declare integer values
         int a = 3;
         int b = 5;
 
+        // AND operator (& and &&)
+        System.out.println("b1 & (a < b) = " +  (b1 & (a < b)));  // true & true = true
+        // Explanation: The single '&' checks both sides. Since both 'b1' is true and 'a < b' (3 < 5) is true, the result is true.
 
-        //and ve   pesimist
-        System.out.println("b1 & (a<b) = " +  (b1 &   ( a < b )  )   );//b1 & (a<b) = true
+        System.out.println("b2 && (a < b) = " + (b2 && (a < b)));  // false && true = false
+        // Explanation: The '&&' operator uses short-circuiting. Since 'b2' is false, Java doesn't evaluate the second condition ('a < b'),
+        // because the overall expression will be false regardless of the second condition.
 
-        System.out.println("b2 & (a<b) = " + (b2 && (a < b)));////b2 & (a<b) = false
-        //Condition 'b2 && (a < b)' is always 'false' when reached
+        // OR operator (| and ||)
+        System.out.println("b1 || (a < b) = " + (b1 || (a < b)));  // true || true = true
+        // Explanation: The '||' operator uses short-circuiting. Since 'b1' is true, Java doesn't evaluate the second condition ('a < b'),
+        // because the overall expression is true as soon as one condition is true.
 
-        //or veya   optimist
-        System.out.println("b1 || (a<b) = " + (b1 || (a < b)));//Condition 'b1 || (a < b)' is always 'true' when reached
-        System.out.println("b2 || (a<b) = " +( b2 || (a < b)));//Condition 'b2 || (a < b)' is always 'true' when reached
+        System.out.println("b2 || (a < b) = " + (b2 || (a < b)));  // false || true = true
+        // Explanation: Since 'b2' is false, Java evaluates the second condition ('a < b'), which is true. So the result is true.
 
-        //not !
+        // NOT operator (!)
+        System.out.println("!b1 || (a > b) = " + !(b1 || (a > b)));  // !(true || false) = false
+        // Explanation: Inside the parentheses, the condition 'b1 || (a > b)' evaluates to true (since b1 is true).
+        // The NOT operator (!) inverts this result to false.
 
-        System.out.println("!b1 || (a>b) = " + ! (  b1 || ( a > b  )  )  );  //!b1 || (a>b) = false
-        //Condition '!b1 || ( a > b )' is always 'false' when reached
+        // Additional examples with NOT
+        System.out.println("b1 = " + b1);  // true
+        System.out.println("!b1 = " + !b1);  // !true = false
+        // Explanation: The NOT operator simply inverts the value of b1. Since b1 is true, '!b1' is false.
 
-        System.out.println("b1 = " + b1);  // b1 = true
+        // Comparing `a` and `b` with inequality
+        System.out.println("a != b = " + (a != b));  // true
+        // Explanation: 'a' (3) is not equal to 'b' (5), so this condition is true.
 
-        System.out.println("!b1 = " + !b1); // !b1 = false
+        // Declaring new values for a and b, and additional boolean variables
+        a = 10;  // Reassign 'a' to 10
+        b = 20;  // Reassign 'b' to 20
+        boolean x = true;
+        boolean y = false;
 
-        System.out.println("a!=b = " + (a != b)); //a!=b = true
-        //a ile b esit degil mi ? degil yani true
+        // Complex condition using AND, OR, and NOT
+        boolean result = (x || y) && !(a > b) && (a != b);
 
+        // Step by step evaluation:
+        // (x || y) --> true (because x is true)
+        // !(a > b) --> true (because a (10) is not greater than b (20))
+        // (a != b) --> true (because a (10) is not equal to b (20))
+        // Final result: true && true && true --> true
 
+        System.out.println("Complex condition result: " + result);  // Output: true
     }
 }
