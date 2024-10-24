@@ -6,21 +6,36 @@ public class _21_ComparisonOperators_not_equal {
 
     public static void main(String[] args) {
 
-        /*  2 double oluşturun.
-            İlk double'ın değeri 14.23, ikinci double'ın değeri 19.52 olmalı.
-            Double1'in double2'ye eşit olmadığını doğrulayın.
-            Eğer eşit değilse cevap true olmalı.
-            Cevabı yazdırınız.  */
+        /*
+        This task demonstrates the use of the '!=' (not equal) operator to verify if two double values are not equal.
+        
+        Goal:
+        - Create two double values (14.23 and 19.52).
+        - Verify that the two double values are not equal using the '!=' operator.
+        - If they are not equal, print `true` or a custom message.
+        */
 
-        // Kodu aşağıya yazınız.
-Scanner scanner = new Scanner(System.in); // Scanner objesi oluşturuldu. (6,4)-(27,9)
-System.out.println("Enter first double number: ");
-        double num1 = scanner.nextDouble(); // 14.23
+        // Create a Scanner object to take input from the user
+        Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Enter second double number: ");
-        double num2 = scanner.nextDouble(); // 19.52
+        // Prompt the user for the first double value
+        System.out.println("Enter the first double number (example: 14.23): ");
+        double num1 = scanner.nextDouble(); // Expected input: 14.23
 
-        System.out.println(num1==num2 ? "These numbers are equal" : "These numbers are not equal");
+        // Prompt the user for the second double value
+        System.out.println("Enter the second double number (example: 19.52): ");
+        double num2 = scanner.nextDouble(); // Expected input: 19.52
 
+        // Check if the two doubles are not equal using the '!=' operator
+        boolean result = num1 != num2;
+
+        // Print the result: true if they are not equal, false otherwise
+        System.out.println("Are the two numbers not equal? " + result);
+
+        // Alternatively, print custom messages based on comparison
+        System.out.println(num1 == num2 ? "These numbers are equal" : "These numbers are not equal");
+
+        // Close the scanner to prevent resource leak
+        scanner.close();
     }
 }
