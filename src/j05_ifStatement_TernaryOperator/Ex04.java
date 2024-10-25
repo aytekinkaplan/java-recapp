@@ -1,29 +1,27 @@
-package ch05_ifStatement_TernaryOperator;
+package j05_ifStatement_TernaryOperator;
 
 import java.util.Scanner;
 
 public class Ex04 {
     public static void main(String[] args) {
-         /*
-          TASK -> girilen bir ifadenin ilk karakterinin harf  olup olmadığını  kontrol eden code create ediniz..
-
+        /*
+         Task:
+         Create a program that checks if the first character of a given input is a letter.
          */
 
         Scanner input = new Scanner(System.in);
-        System.out.println("bir ifade gir");
+        System.out.print("Enter a phrase: ");
 
-        char ilkKarakter = input.next().charAt(0);//girilen ifadenin ilk karakteri charAt(0) ile alinip atandi
-        //onemli hatirlatma char variable lar matemtiksel ve karsilaastirmali islemlerde ASCII degerine gore islem yapar
+        char firstCharacter = input.next().charAt(0); // Get the first character of the input string
 
-        //bu ne demek ilkKarakter >= 'A' && ilkKarakter <= 'Z'    => ilk karakter A ile Z arasinda mi
-        //zeynep hanimdan => ilk karakter a ascii değerinden büyük z ascii değerinden küçükse harftir
-
-        if (ilkKarakter >= 'A' && ilkKarakter <= 'Z' || ilkKarakter >= 'a' && ilkKarakter <= 'z' ){
-            System.out.println("girdigin ifadenin ilk karakteri harf tir " +ilkKarakter);
+        // Check if the first character is a letter (using ASCII values)
+        if ((firstCharacter >= 'A' && firstCharacter <= 'Z') || (firstCharacter >= 'a' && firstCharacter <= 'z')) {
+            System.out.println("The first character '" + firstCharacter + "' is a letter.");
+        } else {
+            System.out.println("The first character '" + firstCharacter + "' is not a letter.");
         }
-        else System.out.println("giridigin ifadenin ilk karakteri harf degildir " +ilkKarakter);
 
-
-
+        // Close the Scanner to free up resources
+        input.close();
     }
 }

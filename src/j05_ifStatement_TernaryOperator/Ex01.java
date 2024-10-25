@@ -1,27 +1,26 @@
-package ch05_ifStatement_TernaryOperator;
-
+package j05_ifStatement_TernaryOperator;
 
 import java.util.Scanner;
 
 public class Ex01 {
     public static void main(String[] args) {
-          /*
-        Task01
-           girilen bir sayının negatif ve pozitifliğini kontrol eden code create ediniz..
+        /*
+         Task 01:
+         Create a program that checks if the entered number is positive, negative, or zero.
          */
+
         Scanner input = new Scanner(System.in);
-        System.out.println("bir sayi gir");
 
-        int sayi = input.nextInt();
+        System.out.print("Enter a number: ");
+        int number = input.nextInt();
 
-        if (sayi > 0){//sayinin pozitif olup olmadigi kontrol edildi
-            System.out.println("pozitif bir sayidir");
-        } else if (sayi < 0 ) {//sayi negatif mi kontrol edildi
-            System.out.println("negatif sayidir");
-        }else {
-            System.out.println("girdigin sayi sifir dir");
-        }
+        // Using nested ternary operator to check the sign of the number
+        String result = (number > 0) ? "Positive" : (number < 0) ? "Negative" : "Zero";
 
+        // Printing the result
+        System.out.println("The entered number is: " + result);
 
+        // Closing the Scanner to free up resources
+        input.close();
     }
 }
