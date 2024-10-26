@@ -1,66 +1,79 @@
 package j06_SwitchStatement.tasks;
 
+import java.util.Scanner;
+
 public class Task_SeyahatProjesi {
 
     public static void main(String[] args) {
 
-        /*
-        bulundugunuz yerden, bir yere yolculuk edeceksiniz.
+        Scanner scanner = new Scanner(System.in);
 
-        1. Köln veya Frankfurta gidebilirsiniz.
-        2. Bilet fiyatı hesabı = Her 20 Km başına 5 euro. örn: (100 km yol. Bilet parası  (100/20)* 5 =25 euro
+        // Constants for destinations and pricing
+        final int FRANKFURT_DISTANCE = 60; // in KM
+        final int COLOGNE_DISTANCE = 80;   // in KM
+        final int PRICE_PER_20KM = 5;      // 5 Euro per 20 KM
+        double totalCost = 0.0;
 
-todo İPUCU:  toplamTutar, işlem, FrankfurtKm, KmBirimFiyat   gibi sabit veri tipleri oluşturabilirsiniz.
- İşlemlerde direkt bunları cağırabilirsiniz.
+        // Step 1: Choose destination
+        System.out.println("Where would you like to travel?");
+        System.out.println("Frankfurt : 60 KM --- Cologne : 80 KM");
+        System.out.println("(Ticket price is 5 Euro per 20 KM)");
 
-        todo İLK OLARAK;
+        System.out.print("Enter your destination (Frankfurt/Cologne): ");
+        String destination = scanner.next().toUpperCase();
 
-   "Nereye yolculuk etmek istiyorsunuz?
-   (Frankfurt : 60 KM          ---         Köln : 80 KM ---       (20 KM başına 5 euro bilet parası alınmaktadir..)
-      yazısı gelsin.
+        switch (destination) {
+            case "FRANKFURT":
+                System.out.println("Route = Frankfurt");
+                totalCost = (FRANKFURT_DISTANCE / 20) * PRICE_PER_20KM;
+                System.out.println("Ticket price for Frankfurt: " + totalCost + " Euro");
+                break;
 
-    1.    Frankfurt veya Köln olarak bir giriş yapın. (Girdiğiniz sehrin harfleri , girildikten sonra büyük hale gelsin.
+            case "COLOGNE":
+                System.out.println("Route = Cologne");
+                totalCost = (COLOGNE_DISTANCE / 20) * PRICE_PER_20KM;
+                System.out.println("Ticket price for Cologne: " + totalCost + " Euro");
+                break;
 
-   todo    Frankfurt girildiyse,
-        örn: girdi= Frankfurt
-                case=FRANKFURT:
+            default:
+                System.out.println("Invalid destination. Please enter Frankfurt or Cologne.");
+                scanner.close();
+                return;
+        }
 
-      Rota = Frankfurt yazdırın.
-      Frankfurt km hesabı işlemi yapın.
+        // Step 2: Ask for the number of tickets
+        System.out.print("How many tickets do you want? (Max 2): ");
+        int numTickets = scanner.nextInt();
 
-      son olarak konsolda: Frankfurt 15 Euro         yazsın.
-      todo  case: KÖLN ise
+        if (numTickets == 1) {
+            System.out.println("1 ticket selected.");
+            // The Total cost remains the same for 1 ticket
+        } else if (numTickets == 2) {
+            System.out.println("2 tickets selected.");
+            totalCost *= 2; // Double the cost for 2 tickets
+        } else {
+            System.out.println("Invalid number of tickets. Max allowed is 2.");
+            scanner.close();
+            return;
+        }
 
-      "Rota = Köln" yazdırın.
-       km hesabına göre işlemi yapınız.
+        // Step 3: Confirm travel details and calculate balance
+        System.out.println("Your journey details: " + destination + " - " + numTickets + " ticket(s)");
 
-       son olarak konsolda:  Köln   20 Euro             yazsın.
+        // Define initial balance and calculate change
+        double balance = 50.0;  // Example balance amount
+        System.out.println("Current balance: " + balance + " Euro");
 
+        // Display total cost and calculate the remaining balance
+        System.out.println("Total cost: " + totalCost + " Euro");
 
+        double change = balance - totalCost;
+        if (change >= 0) {
+            System.out.println("Remaining balance: " + change + " Euro");
+        } else {
+            System.out.println("Insufficient balance. You need " + Math.abs(change) + " Euro more.");
+        }
 
-       2.  Sistem bize "Kaç kişilik bilet istiyorsunuz? (Max 2 kişilik olabilir):   "   sorusunu sorsun.
-
-       case:1  ise
-        " 1 kişilik " yazdırın. (1 kişilik seçerseniz bir işlem yapmanıza gerek kalmaz,
-         bilet ücreti yukarıda çoktan belirlenmiş olur.)
-
-        case:2 ise
-
-        "2 kişilik " yazdırın
-        2 kişi için bilet fiyatını hesaplayın.
-
-        todo  Son olarak yolculugunuzu check edin;
-
-        konsolda örn:   Frankfurt  - 2 Kişilik    yazsın.
-
-        1.Bakiyemi belirtin.
-        2.Toplam Tutarı belirtin.
-        3.double paraUstu oluşturun ve hesaplayın.
-        4.Double para üstünü yazdırın.
-
-         */
-
-
-
+        scanner.close();
     }
 }
