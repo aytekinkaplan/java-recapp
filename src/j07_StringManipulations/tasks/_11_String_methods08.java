@@ -4,13 +4,19 @@ public class _11_String_methods08 {
 
     public static void main(String[] args) {
 
-        /*  apple olan bir String oluşturun.
-            String'in içinde app olup olmadığını doğrula.   */
+        /*
+         * Task:
+         * - Create a string with the value "apple".
+         * - Check if the string contains the substring "app" and print the result.
+         */
 
-        //Kodu aşağıya yazınız.
+        System.out.println("apple".contains("app") ? "apple contains 'app'" : "apple does not contain 'app'");
 
-
-
-
+        /*
+         * Explanation:
+         * - The contains() method checks if a specified sequence of characters exists within the string.
+         * - It returns true if the substring is found, and false otherwise.
+         * - Since "apple" contains "app" as a substring, the output will be "apple contains 'app'".
+         */
     }
 }
