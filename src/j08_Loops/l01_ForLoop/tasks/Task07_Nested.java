@@ -6,62 +6,58 @@ public class Task07_Nested {
 
     public static void main(String[] args) {
         /*
-        girilen bir ifadenin istenen harf sayısını print eden code create ediniz
+        Task: Create a program that counts the occurrences of a specified character
+              in a given sentence entered by the user.
 
-        input   : selam javaCAN'lar
-        output : a sayısı : 4
+              Example:
+              Input Sentence: "hello Java developers"
+              Character to Count: "a"
+              Output: "The character 'a' appears 3 times in the sentence."
          */
 
-        Scanner input =new Scanner(System.in);
-        System.out.println("bir cumle gir");
-        String cumle= input.nextLine();
+        // Initialize Scanner to read user input
+        Scanner input = new Scanner(System.in);
 
-        System.out.println("hangi karakterin sayisini istiyorsun");
-        //char da aliabilirsin String de
+        // Prompt the user to enter a sentence
+        System.out.println("Please enter a sentence:");
+        String sentence = input.nextLine();  // Store the user's sentence
 
+        // Ask the user for the character they want to count
+        System.out.println("Enter the character you want to count:");
 
-        //1. yol
-     //   char harf=input.next().charAt(0);
+        // Approach 1 (Using char):
+        // Read the character as `char` type to simplify the comparison with each character in the sentence.
+        // Char characterToCount = input.next().charAt(0);
 
-        //length() son karakteri asar. o yuzden sinirimiz length()-1 olmali
-        //bu for loop u alinan cumlenin her bir karakterinde dolasmak icin kullandik
-        //bize bunu saglayan ozellik index. yani index de dolasiyoruz
-        //i sifirdanan baslamali. cunku index 0 dan baslar
+        // Initialize a counter to zero. This counter will keep track of occurrences of the specified character.
+        int count = 0;
 
-        int count=0; //bizden bir sayi istiyor dolasiyla boos bir int variable create edildi
-        //sayac mantigi
+        // Using the first approach (looping through each character with `char`):
+        // for (int i = 0; i < sentence.length(); i++) {
+        //     if (sentence.charAt(i) == characterToCount) {  // Check if current character matches
+        //         count++;  // Increment count if there's a match
+        //     }
+        // }
 
-//        for (int i = 0; i <= cumle.length()-1 ; i++) {//cumlenin basindan sonuna kadar yani uzunluk isin icine girecek lenght()
-//            if (cumle.charAt(i) == harf){
-//
-//                count++; //
-//
-//            }
-//
-//        }
- //       System.out.println("girdigin cumle  "+cumle+" de  "+harf+" harfi "+count + " tane var");
+        // Print the result for the first approach
+        // System.out.println("The character '" + characterToCount + "' appears " + count + " times in the sentence.");
 
+        // Approach 2 (Using String):
+        // Read the character as a `String` to allow for a flexible approach to comparisons
+        String characterToCountString = input.next();  // Store the character to count as a string
 
+        // Reset count to zero for a new calculation
+        count = 0;
 
-        //2. yol
-        String harfString=input.next();
-        //count yukarda var onu artiririz
-        for (int i = 0 ; i < cumle.length() ; i++) {//i degerleri indexi temsil ettiriyoruz
-
-            if (cumle.substring( i , i+1 ).equals(harfString)){//contains
-                count++;
+        // Loop through each character in the sentence using its index.
+        for (int i = 0; i < sentence.length(); i++) {
+            // Extract each character as a substring of length 1 and compare it with the target character string.
+            if (sentence.substring(i, i + 1).equals(characterToCountString)) {
+                count++;  // Increment count if the character matches
             }
-
-
         }
-        System.out.println("girdigin cumle  "+cumle+" de  "+harfString+" harfi "+count + " tane var");
 
-
-
-
-
-
-
-
+        // Display the final count of the specified character in the given sentence
+        System.out.println("The character '" + characterToCountString + "' appears " + count + " times in the sentence.");
     }
 }
