@@ -2,44 +2,21 @@ package j08_Loops.l01_ForLoop.tasks;
 
 public class Task03_Nested {
     public static void main(String[] args) {
-        // 1 x 1 = 1
-        // 1 x 2 = 2
-        // 1 x 3 = 3
-        // 1 x 4 = 4
-        // 1 x 5 = 5
-        // 1 x 6 = 6
-        // 1 x 7 = 7
-        // 1 x 8 = 8
-        // 1 x 9 = 9
-        // 1 x 10 = 10
-        // Yuarıdaki çarpım tablosunu 10 a kadar print eden code create ediniz.
+        // Full multiplication table up to 10x10
+        System.out.println("Full Multiplication Table (1 to 10):\n");
 
-        //asiye hanim task cok dogru cevap
-        for(int i=1; i<=10; i++){// carpim tablosunun ilk carpani
-
-            for(int j=1; j<=10; j++){ //carpim tablosunun ikinci carpani
-
-                System.out.println("i*j degeri= "+i +"*"+j +" = " + i*j);
-
+        for (int i = 1; i <= 10; i++) {  // First factor
+            for (int j = 1; j <= 10; j++) {  // Second factor
+                System.out.println(i + " x " + j + " = " + (i * j));
             }
-
-            System.out.println(); //dummy kod islevsiz kodu okumayi ve konsol kozmetigi iccin yazilir
+            System.out.println();  // Add a line break after each row for clarity
         }
 
+        // Multiplication table for 1
+        System.out.println("Multiplication Table for 1:\n");
 
-
-        //ahmet bey
-        for (int i=1;i<=10;i++){
-        System.out.println("1*"+i+"="+(1*i));
-
+        for (int i = 1; i <= 10; i++) {
+            System.out.println("1 x " + i + " = " + (1 * i));
         }
-
-
-
-
-
-
-
-
     }
 }
