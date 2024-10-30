@@ -4,20 +4,35 @@ import java.util.Scanner;
 
 public class Task01 {
     public static void main(String[] args) {
-/*
-TaskSahaf.txt-> girilen sayıların toplamı 333 gectiğinde girilen sayı adedini ve toplamını prşnt eden code create ediniz.
- */
+        /*
+         * Task: Create a program that continuously takes integer inputs from the user,
+         * and calculates their cumulative sum. The program should stop once the total sum
+         * exceeds 333 and then display both the count of numbers entered and the final sum.
+         */
 
+        // Initialize a Scanner object to capture user input
         Scanner scanner = new Scanner(System.in);
-        int sum = 0;
-        int count = 0;
-        while (sum <= 333) {
-            int number = scanner.nextInt();
-            sum += number;
-            count++;
 
+        // Variable to store the cumulative sum of user-entered numbers
+        int sum = 0;
+
+        // Counter variable to keep track of the number of inputs entered by the user
+        int count = 0;
+
+        // Begin a loop that will continue until the cumulative sum exceeds 333
+        while (sum <= 333) {
+            System.out.print("Enter a number: "); // Prompt user to input a number
+            int number = scanner.nextInt(); // Capture the user’s input as an integer
+
+            sum += number; // Add the entered number to the cumulative sum
+            count++; // Increment the counter to keep track of the number of inputs
         }
-        System.out.println(count);
-        System.out.println(sum);
+
+        // Display the number of entries made and the final cumulative sum after exiting the loop
+        System.out.println("Total count of numbers entered: " + count);
+        System.out.println("Final sum of entered numbers: " + sum);
+
+        // Close the Scanner object to release resources
+        scanner.close();
     }
 }
