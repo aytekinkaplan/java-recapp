@@ -23,6 +23,18 @@ public class Task08 {
 
         while (true) {
             System.out.println("Enter positive number or 0 to exit.");
+            int number = input.nextInt();
+            if (number > 0) {
+                countOfPositives++;
+                sumOfPositives += number;
+            } else if (number < 0) {
+                countOfNegatives++;
+            } else if (number == 0) {
+                System.out.println(output1);
+                System.out.println(output2);
+                System.out.println(output3);
+                break;
+            }
 
         }
 
