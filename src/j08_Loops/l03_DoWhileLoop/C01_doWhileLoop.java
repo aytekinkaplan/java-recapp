@@ -4,29 +4,28 @@ public class C01_doWhileLoop {
     public static void main(String[] args) {
 
          /*
-        While loop-> önce sart konrol edilir eğer  sart sonucu true alınırsa body action çalışır
-        do-While loop-> önce body action çalışır sonra şart kontrol edilir.Sart true ise döngü devam eder.
-        sart false ise döngü lırılır ve döngüden sonraki ilk satır çalışır.
-        do-While loop->  game app. de daha çok kullanılır.
-        Trick: while loop sart sağlanmazsa hiç çaılşmayabilir ama do-while sart sağalasın sağlamasın
-        en az bir kez çalışır..
+        While loop -> first checks the condition; if true, it executes the loop body.
+        Do-While loop -> first executes the loop body, then checks the condition.
+        If the condition is true, the loop continues; if false, it stops and moves to the next code block.
+        Do-While loop is often used in game applications.
+
+        Trick: A while loop may not execute if the condition is false initially,
+        but a do-while loop will always execute at least once, regardless of the condition.
          */
 
-        //yas 18 den buyukse girebilsin degilse giremesin
+        // Allow access only if age is greater than 18
         int yas = 15;
 
-        while (yas > 18 ){
-            System.out.println("girebilirsin while");
-            yas --;
+        // Using a while loop
+        while (yas > 18) {
+            System.out.println("You can enter (while loop).");
+            yas--;
         }
 
+        // Using a do-while loop
         do {
-            System.out.println("girebilirsinin do while");
+            System.out.println("You can enter (do-while loop).");
             yas--;
-        }while (yas > 18);
-
-
-
-
+        } while (yas > 18);
     }
 }
