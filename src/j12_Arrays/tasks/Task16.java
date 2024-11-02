@@ -2,24 +2,20 @@ package j12_Arrays.tasks;
 
 public class Task16 {
     public static void main(String[] args) {
-        // task->  Mdarr'deki son elemanların çarpımını print eden code create ediniz
+        // Task: Print the product of the last elements of each subarray in MDarr
 
-        int carpim=1;
-        int[][] MDarr = {{1, 2, 3}, {4, 5, 6,8}, {7, 8, 9, 0,2,3,2}};
+        int product = 1;
+        int[][] MDarr = {{1, 2, 3}, {4, 5, 6, 8}, {7, 8, 9, 0, 2, 3, 2}};
 
         for (int i = 0; i < MDarr.length; i++) {
-
-            carpim*=   MDarr[i][MDarr[i].length - 1];//her dairenin son elemani al
-
-            System.out.println("MDarr[i][MDarr[i].length - 1] = " + MDarr[i][MDarr[i].length - 1]);
-
+            // Access the last element in each subarray
+            product *= MDarr[i][MDarr[i].length - 1];
+            System.out.println("Last element in MDarr[" + i + "] = " + MDarr[i][MDarr[i].length - 1]);
         }
-        System.out.println("carpim = " + carpim);
 
-        //3 u nasil aliriz
-        System.out.println("MDarr[0][2] = " + MDarr[0][2]);//3
-        System.out.println("MDarr[0][MDarr.length-1] = " + MDarr[0][MDarr.length - 1]);///3
+        System.out.println("Product of last elements: " + product);
 
-
+        // Example of accessing specific elements (unrelated to the main task)
+        System.out.println("MDarr[0][2] = " + MDarr[0][2]); // Access element 3 in the first row
     }
 }
