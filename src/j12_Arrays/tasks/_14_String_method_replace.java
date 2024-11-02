@@ -5,12 +5,15 @@ public class _14_String_method_replace {
     public static void main(String[] args) {
 
         /*
-        Bu String'i oluşturunuz.  "Hello World"
-        "o" harfleri yerine "K" yerleştiriniz.
-        Sonuç bu şekilde olmalıdır:
+        Create this String: "Hello World"
+        Replace all occurrences of the letter "o" with "K".
+        The result should be:
         HellK WKrld
          */
 
+        String str = "Hello World";
+        str = str.replace('o', 'K'); // Replaces all 'o' with 'K'
 
+        System.out.println(str); // Output: HellK WKrld
     }
 }

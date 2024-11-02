@@ -1,19 +1,27 @@
 package j12_Arrays.tasks;
 
+import java.util.Arrays;
+
 public class _20_Arrayboth_Ends {
 
     public static void main(String[] args) {
 
-     /*
-     Oluşturacağınız int array'ini, length'i(eleman sayısı) 2 olan ve int array'inin(ilk oluşturduğunuz array)
-     ilk ve son elementlerini kapsayan yeni array'e return edin.
+        /*
+        Create an int array, and return a new array of length 2 containing the first and last elements
+        of the original array.
 
-    Oluşturacağınız int array'i =   ([1, 2, 3, 4])
+        Example input array = [1, 2, 3, 4]
+        Expected output = [1, 4]
+        */
 
-    Sonuç bu şekilde olmalıdır. [1, 4]
-      */
-        //Kodu aşağıya yazınız..
+        int[] originalArray = {1, 2, 3, 4};
 
-
+        // Check if the array has at least two elements
+        if (originalArray.length >= 2) {
+            int[] newArray = {originalArray[0], originalArray[originalArray.length - 1]};
+            System.out.println("Result: " + Arrays.toString(newArray));
+        } else {
+            System.out.println("Array must have at least two elements.");
+        }
     }
 }
