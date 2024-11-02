@@ -5,15 +5,24 @@ public class _05_Array_with_for_if {
     public static void main(String[] args) {
 
         /*
-        int Array oluşturun ve elemanları : 5,6,8,12,14,19
-        Eğer sayı çiftse topla, tekse çıkar.
-        Örneğin:
+        Create an int array with elements: 5, 6, 8, 12, 14, 19
+        If the number is even, add it to the sum; if it’s odd, subtract it.
+        Example calculation:
          -5 + 6 + 8 + 12 + 14 - 19 = 16
-        Toplamlarını yazdırın.
+        Print the final total.
          */
 
-        //Kodu aşağıya yazınız.
+        int[] numbers = {5, 6, 8, 12, 14, 19};
+        int sum = 0;
 
+        for (int number : numbers) {
+            if (number % 2 == 0) {
+                sum += number;
+            } else {
+                sum -= number;
+            }
+        }
 
+        System.out.println("The final total is: " + sum);
     }
 }

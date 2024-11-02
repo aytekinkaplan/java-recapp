@@ -5,14 +5,23 @@ public class _06_Array_contains {
     public static void main(String[] args) {
 
         /*
-        String array oluşturun ve elemanları : Apple , Orange , Banana , Pineapple
-        Apple elemanının bu Array'a ait olup olmadığını kontrol edin.
-        Eğer aitse "true" çevirin.
-        Loops (döngüler) kullanın.
+        Create a String array with elements: "Apple", "Orange", "Banana", "Pineapple".
+        Check if the element "Apple" is present in the array.
+        If it is, print "true" once.
+        Use loops.
          */
 
-        //Kodu aşağıya yazınız..
+        String[] fruits = {"Apple", "Orange", "Banana", "Pineapple"};
+        boolean containsApple = false;
 
+        // Check if "Apple" is in the array
+        for (String fruit : fruits) {
+            if (fruit.equals("Apple")) {
+                containsApple = true;
+                break;
+            }
+        }
 
+        System.out.println(containsApple);
     }
 }

@@ -5,13 +5,14 @@ public class _04_Create_Array_String {
     public static void main(String[] args) {
 
         /*
-        String array  oluşturun ve elemanları: "new jersey" , "new york", "boston","California"
-        Array'daki eleman sayısını yazdırınız.
-        Cevap 4 olmalı.
+        Create a String array with elements: "new jersey", "new york", "boston", "California".
+        Print the number of elements in the array.
+        The answer should be 4.
          */
 
-        // Kodu aşağıya yazınız..
+        String[] arr = {"new jersey", "new york", "boston", "California"};
 
-
+        // Print the number of elements in the array
+        System.out.println("Number of elements in the array: " + arr.length);
     }
 }
