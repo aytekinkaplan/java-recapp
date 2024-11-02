@@ -1,23 +1,44 @@
 package j12_Arrays.tasks;
 
+import java.util.Arrays;
+
 public class _13_Advance_zeroFront {
 
     public static void main(String[] args) {
 
-      /*
+        /*
+        Given an array, return a new array where all zeros are grouped at the beginning,
+        and the order of non-zero numbers does not matter.
 
-   Verilen Array tam olarak aynı sayıları içeren, ancak tüm sıfırların dizinin başında gruplandırılması
-   için yeniden düzenlenmiş bir Array döndürün.
-   Sıfır olmayan sayıların sırası önemli değildir.
-   Böylece {1, 0, 0, 1} {0, 0, 1, 1} olur. Verilen diziyi değiştirebilir ve döndürebilir veya yeni bir dizi oluşturabilirsiniz.
+        Example:
+        Input: {1, 0, 0, 1, 0}
+        Output: {0, 0, 0, 1, 1}
+         */
 
-   Bu şekilde bir Array oluşturunuz: 1,0,0,1,0
-   Sonuç böyle olmalı :  0,0,0,1,1
+        int[] arr = {1, 0, 0, 1, 0};
+        int[] result = moveZerosToFront(arr);
 
-       */
+        System.out.println(Arrays.toString(result));
+    }
 
-        // Kodu aşağıya yazınız..
+    private static int[] moveZerosToFront(int[] arr) {
+        int[] result = new int[arr.length];
+        int index = 0;
 
+        // Place all zeros at the start of the result array
+        for (int num : arr) {
+            if (num == 0) {
+                result[index++] = 0;
+            }
+        }
 
+        // Place non-zero elements after the zeros
+        for (int num : arr) {
+            if (num != 0) {
+                result[index++] = num;
+            }
+        }
+
+        return result;
     }
 }
