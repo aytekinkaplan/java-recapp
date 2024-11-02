@@ -5,29 +5,30 @@ import java.util.Scanner;
 
 public class Task01 {
     public static void main(String[] args) {
-        //TaskSahaf.txt-> kullanıcidan alınan değerlerle bir int array elemanlarını bukukten kucuge   print eden code create ediniz.
+        // Task: Create an int array based on values provided by the user and print it in descending order.
 
-        Scanner input=new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
 
-        System.out.println("kac elamanli array istersin");
-        int boyut=input.nextInt();
+        System.out.print("How many elements do you want in the array? ");
+        int size = input.nextInt();
 
-        int [] arr=new int[boyut];//kullaniciidan alinan deger yeni array in boyutu olarak belirlendi
+        int[] arr = new int[size]; // The array is created with the specified size.
 
-        for (int i = 0; i < boyut ; i++) {
-            System.out.println(i+1 +". nci degeri gir");
-            arr[i]=input.nextInt();//boyut kadar kullanicindan deger alinarak arr array inin elemanlari atandi
-        }
-        System.out.println("seniin istedigin array budur = "+ Arrays.toString(arr));
-
-        Arrays.sort(arr);//burada array kucukten buyuge siralandi
-
-        for (int i = arr.length-1/*en buyuk eleman en sagda oldugu icin ordan basladik*/; i >=0 ; i--) {
-            System.out.print( arr[i]+" ");
+        // Populate the array with user inputs
+        for (int i = 0; i < size; i++) {
+            System.out.print("Enter value for element " + (i + 1) + ": ");
+            arr[i] = input.nextInt();
         }
 
+        System.out.println("Your array: " + Arrays.toString(arr));
 
+        // Sort the array in ascending order
+        Arrays.sort(arr);
 
-
+        // Print the sorted array in descending order
+        System.out.print("Array in descending order: ");
+        for (int i = arr.length - 1; i >= 0; i--) {
+            System.out.print(arr[i] + " ");
+        }
     }
 }
