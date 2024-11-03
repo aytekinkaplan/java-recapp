@@ -5,23 +5,25 @@ import java.util.List;
 
 public class C08_isEmpty_clear {
     public static void main(String[] args) {
-        //isEmpty();-> listin boş olmasını kontrol eder true/false return eder.
-        //clear(); -> listin tum elelmalrını siler
+        // `isEmpty()` checks if the list contains any elements, returning true if it's empty, false otherwise.
+        // `clear()` removes all elements from the list, effectively emptying it.
 
-        ArrayList<String> country = new ArrayList<>(List.of("MADAGASKAR","ALMANYA","POLONYA","UGANDA","ITALYA"));
+        // Initializing an ArrayList with initial values using List.of()
+        ArrayList<String> country = new ArrayList<>(List.of("MADAGASKAR", "ALMANYA", "POLONYA", "UGANDA", "ITALYA"));
         System.out.println("country = " + country);
+        // Output: country = [MADAGASKAR, ALMANYA, POLONYA, UGANDA, ITALYA]
 
-        System.out.println("country.isEmpty() = " + country.isEmpty()); //country.isEmpty() = false
-                //Returns true if this list contains no elements.
+        // Example 1: Checking if the list is empty using `isEmpty()`
+        System.out.println("country.isEmpty() = " + country.isEmpty());
+        // Output: country.isEmpty() = false, since the list contains elements
 
+        // Example 2: Clearing all elements from the list using `clear()`
         country.clear();
-        System.out.println("country = " + country);
+        System.out.println("country after clear() = " + country);
+        // Output: country = [], showing the list is now empty after `clear()`
 
-
-        System.out.println("country.isEmpty() = " + country.isEmpty());//country.isEmpty() = true
-
-
-
-
+        // Example 3: Verifying that the list is empty after `clear()` using `isEmpty()`
+        System.out.println("country.isEmpty() = " + country.isEmpty());
+        // Output: country.isEmpty() = true, confirming the list is empty after clearing
     }
 }
