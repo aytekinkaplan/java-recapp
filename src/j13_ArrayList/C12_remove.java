@@ -8,45 +8,56 @@ import java.util.List;
 public class C12_remove {
 
     public static void main(String[] args) {
-        //remove();-> list'ten istenen eleman siler
+        // `remove(Object o)` removes the first occurrence of the specified element.
+        // `remove(int index)` removes the element at the specified index.
+        // `removeAll(Collection<?> c)` removes all elements that exist in the specified collection.
 
-        ArrayList<String> country = new ArrayList<>(List.of("MADAGASKAR","ALMANYA","POLONYA","UGANDA","ITALYA"));
-        System.out.println("country = " + country);//country = [MADAGASKAR, ALMANYA, POLONYA, UGANDA, ITALYA]
+        // Initializing an ArrayList with initial values using List.of()
+        ArrayList<String> country = new ArrayList<>(List.of("MADAGASKAR", "ALMANYA", "POLONYA", "UGANDA", "ITALYA"));
+        System.out.println("Original country list = " + country);
+        // Output: country = [MADAGASKAR, ALMANYA, POLONYA, UGANDA, ITALYA]
 
-        Collections.sort(country);
+        // Example 1: Attempting to remove a non-existent element
+        System.out.println("country.remove(\"Norway\") = " + country.remove("Norway"));
+        // Output: country.remove("Norway") = false, as "Norway" is not in the list
 
-        System.out.println("country.remove(\"Norvec\") = " + country.remove("Norway"));//country.remove("Norvec") = false
+        // Example 2: Removing an existing element by value
+        System.out.println("country.remove(\"UGANDA\") = " + country.remove("UGANDA"));
+        // Output: country.remove("UGANDA") = true, as "UGANDA" is present in the list
 
-        System.out.println("country.remove(\"UGANDA\") = " + country.remove("UGANDA"));//country.remove("UGANDA") = true
+        // Example 3: Removing an element by index
+        System.out.println("country.remove(0) = " + country.remove(0));
+        // Output: country.remove(0) = ALMANYA, the element at index 0 is removed
 
-        System.out.println("country.remove(0) = " + country.remove(0));//country.remove(0) = ALMANYA
+        System.out.println("Updated country list = " + country);
+        // Output: country = [ITALYA, MADAGASKAR, POLONYA]
 
-        System.out.println("country = " + country);// country = [ITALYA, MADAGASKAR, POLONYA]
-
+        // Adding duplicate entries to demonstrate `remove()` behavior
         country.add("Amerika");
         country.add("Hollanda");
         country.add("Ukrayna");
         country.add("Amerika");
-        System.out.println("country = " + country);
-        // country = [ITALYA, MADAGASKAR, POLONYA, Amerika, Hollanda, Ukrayna, Amerika]
+        System.out.println("country after adding elements = " + country);
+        // Output: country = [ITALYA, MADAGASKAR, POLONYA, Amerika, Hollanda, Ukrayna, Amerika]
 
-        System.out.println("country.remove(\"Amerika\") = " + country.remove("Amerika"));//country.remove("Amerika") = true
+        // Example 4: Removing the first occurrence of a duplicate element
+        System.out.println("country.remove(\"Amerika\") = " + country.remove("Amerika"));
+        // Output: country.remove("Amerika") = true, removes the first "Amerika" only
 
-        System.out.println("country = " + country);// country = [ITALYA, MADAGASKAR, POLONYA, Hollanda, Ukrayna, Amerika]
+        System.out.println("Updated country list after removing one 'Amerika' = " + country);
+        // Output: country = [ITALYA, MADAGASKAR, POLONYA, Hollanda, Ukrayna, Amerika]
 
-        ArrayList<String> city = new ArrayList<>(Arrays.asList("Angara","erzurum","izmir","konya","bursa","mogadishu","aydin"));
-        System.out.println("city = " + city);//city = [Angara, erzurum, izmir, konya, bursa, mogadishu, aydin]
-
+        // Example 5: Adding all elements from another list
+        ArrayList<String> city = new ArrayList<>(Arrays.asList("Angara", "erzurum", "izmir", "konya", "bursa", "mogadishu", "aydin"));
         country.addAll(city);
+        System.out.println("country after adding city list = " + country);
+        // Output: country = [ITALYA, MADAGASKAR, POLONYA, Hollanda, Ukrayna, Amerika, Angara, erzurum, izmir, konya, bursa, mogadishu, aydin]
 
-        System.out.println("country = " + country);//
-        //ountry = [ITALYA, MADAGASKAR, POLONYA, Hollanda, Ukrayna, Amerika, Angara, erzurum, izmir, konya, bursa, mogadishu, aydin]
+        // Example 6: Removing all elements found in another list with `removeAll()`
+        System.out.println("country.removeAll(city) = " + country.removeAll(city));
+        // Output: country.removeAll(city) = true, removes all elements from `city` found in `country`
 
-        System.out.println("country.removeAll(city) = " + country.removeAll(city));//country.removeAll(city) = true
-
-        System.out.println("city = " + city);// city = [Angara, erzurum, izmir, konya, bursa, mogadishu, aydin]
-
-        System.out.println("country = " + country);// country = [ITALYA, MADAGASKAR, POLONYA, Hollanda, Ukrayna, Amerika]
-
+        System.out.println("Final country list after removeAll = " + country);
+        // Output: country = [ITALYA, MADAGASKAR, POLONYA, Hollanda, Ukrayna, Amerika]
     }
 }
