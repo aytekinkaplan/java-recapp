@@ -5,16 +5,21 @@ import java.util.List;
 
 public class C11_contains {
     public static void main(String[] args) {
-        //contains(); -> method list'te istenen elelmanın varlıgını  kontrol eder true/false return
+        // `contains(Object o)` checks if the specified element is in the list.
+        // Returns `true` if found, otherwise `false`.
 
-        ArrayList<String> country = new ArrayList<>(List.of("MADAGASKAR","ALMANYA","POLONYA","UGANDA","ITALYA"));
-        System.out.println("country = " + country);//country = [MADAGASKAR, ALMANYA, POLONYA, UGANDA, ITALYA]
+        // Initializing an ArrayList with initial values using List.of()
+        ArrayList<String> country = new ArrayList<>(List.of("MADAGASKAR", "ALMANYA", "POLONYA", "UGANDA", "ITALYA"));
+        System.out.println("country = " + country);
+        // Output: country = [MADAGASKAR, ALMANYA, POLONYA, UGANDA, ITALYA]
 
-        System.out.println("country.contains(\"almanya\") = " +
-                country.contains("almanya"));//country.contains("almanya") = false
+        // Example 1: Checking for an element with a different case
+        System.out.println("country.contains(\"almanya\") = " + country.contains("almanya"));
+        // Output: country.contains("almanya") = false
+        // Explanation: `contains()` is case-sensitive, so "almanya" is not recognized as "ALMANYA".
 
-        System.out.println("country.contains(\"UGANDA\") = " + country.contains("UGANDA"));//country.contains("UGANDA") = true
-
-
+        // Example 2: Checking for an element that exists in the list
+        System.out.println("country.contains(\"UGANDA\") = " + country.contains("UGANDA"));
+        // Output: country.contains("UGANDA") = true, because "UGANDA" is present in `country`
     }
 }
