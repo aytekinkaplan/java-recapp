@@ -8,28 +8,33 @@ import java.util.List;
 public class C15_ArrayConverttoList {
     public static void main(String[] args) {
 
-
-            String [] names = {"Ali","Zeynep","Fatih" ,"Safak","Derya"};
+        // Initializing an array of names
+        String[] names = {"Ali", "Zeynep", "Fatih", "Safak", "Derya"};
         System.out.println("Arrays.toString(names) = " + Arrays.toString(names));
+        // Output: Arrays.toString(names) = [Ali, Zeynep, Fatih, Safak, Derya]
 
-        List<String > namesList = Arrays.asList(names) ;
-        System.out.println("namesList = " + namesList);//namesList = [Ali, Zeynep, Fatih, Safak, Derya]
+        // Method 1: Converting array to list with Arrays.asList()
+        List<String> namesList = Arrays.asList(names);
+        System.out.println("namesList = " + namesList);
+        // Output: namesList = [Ali, Zeynep, Fatih, Safak, Derya]
+        // Explanation: This creates a fixed-size list backed by the original array.
 
-     //RTE    System.out.println("namesList.add(\"Zafer\") = " + namesList.add("Zafer"));
-        //Exception in thread "main" java.lang.UnsupportedOperationException
+        // Attempting to add an element to namesList causes a runtime error
+        // Uncommenting the line below will throw UnsupportedOperationException
+        // namesList.add("Zafer");
 
-    //RTE    ArrayList<String> nameArrayList = (ArrayList<String>) Arrays.asList(names);
-        //Exception in thread "main" java.lang.ClassCastException
-     //   System.out.println("nameArrayList = " + nameArrayList);
+        // Incorrect casting approach
+        // Uncommenting the line below will throw a ClassCastException
+        // ArrayList<String> nameArrayList = (ArrayList<String>) Arrays.asList(names);
 
+        // Method 2: Properly converting to a mutable ArrayList
+        ArrayList<String> nameArrayList = new ArrayList<>(Arrays.asList(names));
+        System.out.println("nameArrayList = " + nameArrayList);
+        // Output: nameArrayList = [Ali, Zeynep, Fatih, Safak, Derya]
 
-        ArrayList <String> nameArrayList= new ArrayList<>(Arrays.asList(names));
-
-        System.out.println("nameArrayList = " + nameArrayList);//nameArrayList = [Ali, Zeynep, Fatih, Safak, Derya]
+        // Sorting the mutable ArrayList
         Collections.sort(nameArrayList);
-        System.out.println("nameArrayList = " + nameArrayList);//nameArrayList = [Ali, Derya, Fatih, Safak, Zeynep]
-
-
-
+        System.out.println("Sorted nameArrayList = " + nameArrayList);
+        // Output: nameArrayList = [Ali, Derya, Fatih, Safak, Zeynep]
     }
 }
