@@ -1,5 +1,8 @@
 package j13_ArrayList.tasks;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class _04_arraylist4 {
 
     /*
@@ -18,8 +21,8 @@ public class _04_arraylist4 {
      */
 
     public static void main(String[] args) {
-
-
+        ArrayList<String> list = new ArrayList<>(List.of("yellow", "red", "blue", "red", "blue"));
+        System.out.println(list);
 
 
     }
