@@ -4,33 +4,32 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Task01 {
-    /* TASK :
-
-     * Input olarak verilen listteki isimlerden
-     * icinde ‘a’ harfi bulunanlari silen bir code create ediniz.
+    /* TASK:
+     * Remove names containing the letter 'a' from the list.
      *
-     * INPUT : list1={"Ali","Veli","Ayse","Fatma","Omer"}
-     * OUTPUT : [Veli,Omer]
+     * INPUT : list1={"Ali","Serap","Zeynep","Fuat"}
+     * OUTPUT : [Zeynep]
      */
 
     public static void main(String[] args) {
 
-        ArrayList <String> names = new ArrayList<>(List.of("Ali","Serap","Zeynep","Fuat"));
-        ArrayList <String> newNames = new ArrayList<>();
+        // Initial list of names with some containing the letter 'a'
+        ArrayList<String> names = new ArrayList<>(List.of("Ali", "Serap", "Zeynep", "Fuat"));
+        ArrayList<String> newNames = new ArrayList<>();
 
-        System.out.println("names = " + names);//names = [Ali, Serap, Zeynep, Fuat]
+        System.out.println("Original names list = " + names); // Output: names = [Ali, Serap, Zeynep, Fuat]
 
-        for (int i = 0; i <names.size() ; i++) {
-            if ( ! names.get(i).toLowerCase().contains("a") ){//a harfi olmayanlari alir
-                newNames.add(names.get(i));//a harfi olmayan her elemaniu namesListe e ekler
+        // Loop through names and add those without 'a' to newNames
+        for (String name : names) {
+            if (!name.toLowerCase().contains("a")) { // Checks if 'a' is absent
+                newNames.add(name); // Adds names without 'a' to newNames
             }
         }
-        System.out.println("newNames = " + newNames);//newNames = [Zeynep]
+        System.out.println("Filtered newNames list = " + newNames); // Output: newNames = [Zeynep]
+
+        // Clear the original list and add back filtered names
         names.clear();
-        System.out.println("names = " + names); // names = []
         names.addAll(newNames);
-        System.out.println("names = " + names);//names = [Zeynep]
-
-
+        System.out.println("Updated names list = " + names); // Output: names = [Zeynep]
     }
 }
