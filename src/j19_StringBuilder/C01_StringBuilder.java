@@ -5,65 +5,61 @@ import java.time.LocalTime;
 public class C01_StringBuilder {
 
     public static void main(String[] args) {
- /*
-   String = > daha yavas ,Immutable==> degisemez,
-   String'lerde method kullanarak String'i degistirmek atama yapmadan mumkun degildir.
+        /*
+           String => slower, Immutable => cannot be changed directly,
+           Once created, String objects cannot be changed without reassignment.
 
-   1) Java pass-by-value kullanir
-   2) String Class'i immutable Class'dir.
+           1) Java uses pass-by-value
+           2) The String class is immutable (unchangeable).
 
-    StringBuffer =mutable==>degisebilir,less efficient/ daha yavas ,
-    StringBuffer synchronized,thread safe.
+           StringBuffer = mutable => can be changed, less efficient, slower,
+           StringBuffer is synchronized and thread-safe.
 
-   StringBuilders = mutable==>degisebilir ,
-   not senkronized/not thread safe,fakat more efficient(daha etkili,ve hizli )
+           StringBuilder = mutable => can be changed,
+           not synchronized, not thread-safe, but more efficient (faster and more effective).
 
-   1) String Class'i immutable(Degistirilemez)dir. Java mutable Stringler uretebilmemiz icin
-   StringBuilder isimli bir class uretmistir.
-   2) Java'da StringBuilder ile hemen hemen ayni isi yapan bir de StringBuffer classi vardir.
-   "StringBuffer" Class'i StringBuilder Class'indan daha once uretilmistir.
-   "StringBuffer" yavas calisan bir class'dir, "StringBuilder" ise hizli calisir.
-   "StringBuffer"  "synchronize" islemlerini yapabilir, ama "StringBuilder" yapamaz.
-   3) Ayni anda bir cok isin yapilmasina "multi threading" denir. "multi" = Cok, "thread"= Yapilan islerin herbiri
-  	Multi threading varsa, bu islerin siraya konulmasi lazim. Islerin siraya konulmasina "synchronization" denir.
-
-				 */
+           1) The String class is immutable in Java. For mutable strings, Java introduced the StringBuilder class.
+           2) The StringBuffer class, which is similar to StringBuilder, was created before StringBuilder.
+              StringBuffer is slower, but it is synchronized and thread-safe.
+           3) "Multi-threading" means multiple tasks running simultaneously.
+              When multi-threading is involved, tasks need to be ordered in a process known as "synchronization."
+         */
 
         String str = "javAslan";
-        System.out.println("method oncesi str = " + str);
-        strBirlestir(str);
-        System.out.println("method sonrasi str = " + str);
+        System.out.println("String before method call = " + str);
+        concatenateString(str);
+        System.out.println("String after method call = " + str);
 
-        // task -> 50 000 tekrarlı bir loop ile String ve StringBuilder obj run time
-        // surelerini karsılatırın.
+        // Task: Compare runtime performance of String and StringBuilder in a loop with 50,000 iterations.
 
         String s = "a";
         StringBuilder sb1 = new StringBuilder("");
 
-        LocalTime str1Basla = LocalTime.now();
-        System.out.println("string obj basladi " + str1Basla);
-        for (int i = 0; i <50000 ; i++) {
+        // Measure time taken by String
+        LocalTime strStartTime = LocalTime.now();
+        System.out.println("String process started at " + strStartTime);
+        for (int i = 0; i < 50000; i++) {
             s += i;
         }
-        LocalTime str1Bitti = LocalTime.now();
-        System.out.println("string obj bitti " + str1Bitti);
+        LocalTime strEndTime = LocalTime.now();
+        System.out.println("String process ended at " + strEndTime);
 
-        System.out.println("fark " + (str1Bitti.getNano() - str1Basla.getNano()));
+        System.out.println("Time difference (nanoseconds): " + (strEndTime.getNano() - strStartTime.getNano()));
 
-        LocalTime sb1Basla = LocalTime.now();
-        System.out.println("string builder obj basladi " + sb1Basla);
-        for (int i = 0; i <50000 ; i++) {
-           sb1.append(i);
+        // Measure time taken by StringBuilder
+        LocalTime sbStartTime = LocalTime.now();
+        System.out.println("StringBuilder process started at " + sbStartTime);
+        for (int i = 0; i < 50000; i++) {
+            sb1.append(i);
         }
-        LocalTime sb1Bitti = LocalTime.now();
-        System.out.println("string obj bitti " + sb1Bitti);
+        LocalTime sbEndTime = LocalTime.now();
+        System.out.println("StringBuilder process ended at " + sbEndTime);
 
-        System.out.println("fark " + (sb1Bitti.getNano() - sb1Basla.getNano()));
-
-
+        System.out.println("Time difference (nanoseconds): " + (sbEndTime.getNano() - sbStartTime.getNano()));
     }
 
-    private static void strBirlestir(String str) {
-        System.out.println(str+ " selam method dan");
+    // Method to concatenate a string
+    private static void concatenateString(String str) {
+        System.out.println(str + " greetings from the method");
     }
 }
